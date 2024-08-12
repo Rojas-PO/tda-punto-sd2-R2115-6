@@ -95,16 +95,30 @@ public class Punto implements IPunto {
         this.etiqueta = etiqueta;
     }
 
-
     // implementar los metodos abstractos que permitan obtener la
     // 1. la distancia entre dos puntos
     // 2. el punto medio entre dos puntos
     // para presentar mediante git la proxima clase 12/08/2024
 
     @Override
-    public double dameDistanciaEntreOtroPunto(Punto OtroOPunto) {
+    public double dameDistanciaEntreOtroPunto(Punto otroPunto) {
+        double distancia = 0;
+        double x1 = this.x;
+        double y1 = this.y;
+        double x2 = otroPunto.getX();
+        double y2 = otroPunto.getY();
+        System.out.println(this.toString());
+        System.out.println(otroPunto.toString());
+        if (this.sistema == Sistema.PLANO) {
+            distancia = Math.sqrt(Math.pow((x2 - x1), 2) + Math.pow((y2 - y1), 2));
 
-        return 0;
+        } else if (this.sistema == Sistema.ESPACIO) {
+
+        } else {
+            System.out.println("Debe proporcionar un sistema, no se puede realizar la operacion.");
+        }
+
+        return distancia;
     }
 
     @Override
