@@ -123,6 +123,10 @@ public class Punto implements IPunto {
 
     @Override
     public Punto damePuntoMedioEntreOtroPunto(Punto OtroPunto) {
+        double xMedio = (this.x + OtroPunto.getX()) / 2;
+        double yMedio = (this.x + OtroPunto.getY()) / 2;
+        double zMedio = (this.x + OtroPunto.getZ()) / 2;
+        Punto puntomedio = new Punto();
 
         return null;
     }
